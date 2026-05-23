@@ -1,0 +1,269 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0f1117;
+  --surface:   #1a1d27;
+  --surface2:  #22263a;
+  --border:    #2e3352;
+  --accent:    #6c63ff;
+  --accent-h:  #8880ff;
+  --text:      #e4e6f0;
+  --muted:     #7b80a0;
+  --success:   #4caf82;
+  --danger:    #e05c5c;
+  --radius:    12px;
+  --shadow:    0 4px 32px rgba(0,0,0,.45);
+}
+
+html { font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem 4rem;
+}
+
+.page {
+  width: 100%;
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  padding: 1rem 0 .5rem;
+}
+.logo {
+  font-size: 2.4rem;
+  background: var(--accent);
+  color: #fff;
+  width: 3rem; height: 3rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: .6rem;
+}
+header h1 { font-size: 1.8rem; font-weight: 700; letter-spacing: -.5px; }
+header p  { color: var(--muted); margin-top: .4rem; font-size: .95rem; }
+
+/* ── Card ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: .4rem;
+  background: var(--bg);
+  border-radius: 8px;
+  padding: .3rem;
+  width: fit-content;
+}
+.tab {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  padding: .4rem 1.1rem;
+  border-radius: 6px;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.tab.active, .tab:hover {
+  background: var(--surface2);
+  color: var(--text);
+}
+.tab.active { color: var(--accent); font-weight: 600; }
+
+/* ── Panels ── */
+.panel { display: none; }
+.panel.active { display: block; }
+
+#url-input {
+  width: 100%;
+  padding: .75rem 1rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: .95rem;
+  outline: none;
+  transition: border-color .15s;
+}
+#url-input:focus { border-color: var(--accent); }
+#url-input::placeholder { color: var(--muted); }
+
+/* ── Drop zone ── */
+.drop-zone {
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  padding: 2rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color .15s, background .15s;
+}
+.drop-zone:hover, .drop-zone.over {
+  border-color: var(--accent);
+  background: rgba(108,99,255,.06);
+}
+.drop-icon { font-size: 2rem; color: var(--muted); margin-bottom: .5rem; }
+.drop-zone p { color: var(--muted); font-size: .92rem; }
+.browse-link {
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.drop-hint { font-size: .78rem; margin-top: .3rem; }
+
+.file-name {
+  font-size: .85rem;
+  color: var(--success);
+  min-height: 1.2rem;
+  margin-top: .4rem;
+}
+
+/* ── Options row ── */
+.options-row {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+.options-row label { color: var(--muted); font-size: .88rem; white-space: nowrap; }
+.options-row select {
+  flex: 1;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: .5rem .75rem;
+  font-size: .9rem;
+  outline: none;
+  cursor: pointer;
+}
+.options-row select:focus { border-color: var(--accent); }
+
+/* ── Buttons ── */
+.btn-primary {
+  width: 100%;
+  padding: .85rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, opacity .15s;
+}
+.btn-primary:hover  { background: var(--accent-h); }
+.btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+
+.btn-download {
+  width: 100%;
+  padding: .7rem;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 8px;
+  font-size: .95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn-download:hover { background: rgba(108,99,255,.12); }
+
+.btn-copy {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 6px;
+  padding: .3rem .7rem;
+  font-size: .82rem;
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+}
+.btn-copy:hover  { color: var(--text); border-color: var(--muted); }
+.btn-copy.copied { color: var(--success); border-color: var(--success); }
+
+/* ── Status ── */
+.status {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  font-size: .9rem;
+  color: var(--muted);
+  padding: .6rem 0;
+}
+.status.error { color: var(--danger); }
+.status.hidden { display: none; }
+
+.spinner {
+  display: inline-block;
+  width: 1.1rem; height: 1.1rem;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin .7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.icon-err { font-size: 1.1rem; flex-shrink: 0; }
+
+/* ── Result ── */
+.result { display: flex; flex-direction: column; gap: .8rem; }
+.result.hidden { display: none; }
+
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.result-header h2 { font-size: 1rem; font-weight: 600; }
+
+#result-text {
+  width: 100%;
+  min-height: 180px;
+  max-height: 340px;
+  resize: vertical;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: .85rem 1rem;
+  font-size: .9rem;
+  font-family: inherit;
+  line-height: 1.6;
+  outline: none;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .card { padding: 1.2rem; }
+  header h1 { font-size: 1.5rem; }
+}

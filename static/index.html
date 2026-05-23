@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Transcriber</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">&#9654;</div>
+      <h1>Video Transcriber</h1>
+      <p>Paste a URL or upload a video &mdash; get the text back instantly.</p>
+    </header>
+
+    <main class="card">
+      <!-- Tab switcher -->
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="url" role="tab" aria-selected="true">URL</button>
+        <button class="tab" data-tab="file" role="tab" aria-selected="false">Upload File</button>
+      </div>
+
+      <!-- URL input -->
+      <div id="panel-url" class="panel active">
+        <input
+          type="url"
+          id="url-input"
+          placeholder="https://www.youtube.com/watch?v=..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+
+      <!-- File upload -->
+      <div id="panel-file" class="panel">
+        <div class="drop-zone" id="drop-zone">
+          <div class="drop-icon">&#8679;</div>
+          <p>Drop a video file here or <span class="browse-link" id="browse-trigger">browse</span></p>
+          <p class="drop-hint">MP4, MOV, AVI, MKV, WEBM</p>
+          <input type="file" id="file-input" accept="video/*" hidden />
+        </div>
+        <p class="file-name" id="file-name"></p>
+      </div>
+
+      <!-- Model selector -->
+      <div class="options-row">
+        <label for="model-select">Whisper model</label>
+        <select id="model-select">
+          <option value="tiny">Tiny &mdash; fastest, less accurate</option>
+          <option value="base" selected>Base &mdash; balanced (default)</option>
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large &mdash; most accurate, slowest</option>
+        </select>
+      </div>
+
+      <button class="btn-primary" id="submit-btn">Transcribe</button>
+
+      <!-- Loading -->
+      <div class="status hidden" id="loading">
+        <span class="spinner"></span>
+        <span id="loading-msg">Processing&hellip; this may take a few minutes.</span>
+      </div>
+
+      <!-- Error -->
+      <div class="status error hidden" id="error-box">
+        <span class="icon-err">&#9888;</span>
+        <span id="error-msg"></span>
+      </div>
+
+      <!-- Result -->
+      <div class="result hidden" id="result-box">
+        <div class="result-header">
+          <h2>Transcript</h2>
+          <button class="btn-copy" id="copy-btn" title="Copy to clipboard">&#10697; Copy</button>
+        </div>
+        <textarea id="result-text" readonly spellcheck="false"></textarea>
+        <button class="btn-download" id="download-btn">&#8681; Download .txt</button>
+      </div>
+    </main>
+
+    <footer>Built with FastAPI &amp; Whisper AI</footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
