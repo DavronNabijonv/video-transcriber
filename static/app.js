@@ -1,5 +1,36 @@
 'use strict';
 
+// ══════════════════════════════════════════════════════════════════════════
+// THEME TOGGLE
+// ══════════════════════════════════════════════════════════════════════════
+const html         = document.documentElement;
+const themeToggle  = document.getElementById('theme-toggle');
+const THEME_KEY    = 'vt-theme';
+
+// Load saved theme or fall back to system preference
+function loadTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved) return saved;
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+function applyTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem(THEME_KEY, theme);
+}
+
+// Init on page load
+applyTheme(loadTheme());
+
+themeToggle.addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+});
+
+// ══════════════════════════════════════════════════════════════════════════
+// APP STATE
+// ══════════════════════════════════════════════════════════════════════════
+
 // ── State ──────────────────────────────────────────────────────────────────
 let activeTab = 'url';
 let selectedFile = null;
@@ -123,10 +154,10 @@ downloadBtn.addEventListener('click', () => {
 copyBtn.addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText(resultText.value);
-    copyBtn.textContent = '✓ Copied';
+    copyBtn.textContent = '✓  Copied';
     copyBtn.classList.add('copied');
     setTimeout(() => {
-      copyBtn.textContent = '⚗ Copy';
+      copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy`;
       copyBtn.classList.remove('copied');
     }, 2000);
   } catch {
