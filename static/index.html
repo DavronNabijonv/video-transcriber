@@ -1,207 +1,456 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ── Primary SEO ──────────────────────────────────────────────────── -->
-  <title>Video Transcriber — Convert YouTube & Videos to Text Free</title>
-  <meta name="description" content="Free AI-powered video transcription tool. Paste a YouTube, Instagram or any video URL — or upload an MP4 file — and get accurate text in seconds using OpenAI Whisper." />
-  <meta name="keywords" content="video to text, video transcriber, YouTube transcription, audio to text, whisper AI, free transcription, subtitle generator, speech to text" />
-  <meta name="author" content="Video Transcriber" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://video-transcriber-w3it.onrender.com/" />
+    <!-- ── Primary SEO ──────────────────────────────────────────────────── -->
+    <title>Video Transcriber — Convert YouTube & Videos to Text Free</title>
+    <meta
+      name="description"
+      content="Free AI-powered video transcription tool. Paste a YouTube, Instagram or any video URL — or upload an MP4 file — and get accurate text in seconds using OpenAI Whisper."
+    />
+    <meta
+      name="keywords"
+      content="video to text, video transcriber, YouTube transcription, audio to text, whisper AI, free transcription, subtitle generator, speech to text"
+    />
+    <meta name="author" content="Video Transcriber" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://video-transcriber-w3it.onrender.com/" />
 
-  <!-- ── Open Graph (Facebook, LinkedIn, Telegram, WhatsApp) ─────────── -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://video-transcriber-w3it.onrender.com/" />
-  <meta property="og:title" content="Video Transcriber — Convert YouTube & Videos to Text Free" />
-  <meta property="og:description" content="Paste any video URL or upload an MP4 — get an accurate transcript in seconds. Powered by OpenAI Whisper AI. No sign-up required." />
-  <meta property="og:image" content="https://video-transcriber-w3it.onrender.com/static/images/for_share_image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:site_name" content="Video Transcriber" />
+    <!-- ── Open Graph (Facebook, LinkedIn, Telegram, WhatsApp) ─────────── -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://video-transcriber-w3it.onrender.com/"
+    />
+    <meta
+      property="og:title"
+      content="Video Transcriber — Convert YouTube & Videos to Text Free"
+    />
+    <meta
+      property="og:description"
+      content="Paste any video URL or upload an MP4 — get an accurate transcript in seconds. Powered by OpenAI Whisper AI. No sign-up required."
+    />
+    <meta
+      property="og:image"
+      content="https://video-transcriber-w3it.onrender.com/static/images/for_share_image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Video Transcriber" />
 
-  <!-- ── Twitter / X Card ─────────────────────────────────────────────── -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://video-transcriber-w3it.onrender.com/" />
-  <meta name="twitter:title" content="Video Transcriber — Convert YouTube & Videos to Text Free" />
-  <meta name="twitter:description" content="Paste any video URL or upload an MP4 — get an accurate transcript in seconds. Powered by OpenAI Whisper AI. No sign-up required." />
-  <meta name="twitter:image" content="https://video-transcriber-w3it.onrender.com/static/images/for_share_image.png" />
+    <!-- ── Twitter / X Card ─────────────────────────────────────────────── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://video-transcriber-w3it.onrender.com/"
+    />
+    <meta
+      name="twitter:title"
+      content="Video Transcriber — Convert YouTube & Videos to Text Free"
+    />
+    <meta
+      name="twitter:description"
+      content="Paste any video URL or upload an MP4 — get an accurate transcript in seconds. Powered by OpenAI Whisper AI. No sign-up required."
+    />
+    <meta
+      name="twitter:image"
+      content="https://video-transcriber-w3it.onrender.com/static/images/for_share_image.png"
+    />
 
-  <!-- ── JSON-LD Structured Data (Google Rich Results) ────────────────── -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Video Transcriber",
-    "url": "https://video-transcriber-w3it.onrender.com/",
-    "description": "Free AI-powered video transcription. Convert YouTube, Instagram or any video URL to text using OpenAI Whisper.",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "YouTube video transcription",
-      "Video file upload (MP4, MOV, AVI, MKV)",
-      "Multiple Whisper model sizes",
-      "Download transcript as .txt",
-      "No sign-up required"
-    ]
-  }
-  </script>
+    <!-- ── JSON-LD Structured Data (Google Rich Results) ────────────────── -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Video Transcriber",
+        "url": "https://video-transcriber-w3it.onrender.com/",
+        "description": "Free AI-powered video transcription. Convert YouTube, Instagram or any video URL to text using OpenAI Whisper.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "YouTube video transcription",
+          "Video file upload (MP4, MOV, AVI, MKV)",
+          "Multiple Whisper model sizes",
+          "Download transcript as .txt",
+          "No sign-up required"
+        ]
+      }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RW0DCRHC05"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  <link rel="stylesheet" href="/static/style.css" />
-</head>
-<body>
-  <!-- ── Navbar ─────────────────────────────────────────────────────────── -->
-  <nav class="navbar">
-    <div class="brand">
-      <img src="/static/images/logo.png" alt="Video Transcriber Logo" class="brand-icon" />
-      <span class="brand-name">Video<span class="brand-accent">Transcriber</span></span>
-    </div>
-    <button class="theme-toggle" id="theme-toggle" title="Toggle dark / light mode" aria-label="Toggle theme">
-      <!-- Moon (dark mode icon) -->
-      <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-      </svg>
-      <!-- Sun (light mode icon) -->
-      <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="5"/>
-        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-      </svg>
-    </button>
-  </nav>
+      gtag("config", "G-RW0DCRHC05");
+    </script>
 
-  <div class="page">
-    <!-- ── Hero ───────────────────────────────────────────────────────────── -->
-    <header class="hero">
-      <img src="/static/images/app_logo_image.png" alt="Video Transcriber" class="hero-logo" />
-      <h1>Transcribe Videos<br />into Accurate Text</h1>
-      <p>Fast, accurate, and effortless transcriptions for<br class="br-hide" />lectures, interviews, meetings, and more.</p>
-
-      <div class="features-row">
-        <div class="feature-chip">
-          <span class="chip-icon">⚡</span>
-          <span>Fast &amp; Accurate</span>
-        </div>
-        <div class="feature-chip">
-          <span class="chip-icon">🎞️</span>
-          <span>Multiple Formats</span>
-        </div>
-        <div class="feature-chip">
-          <span class="chip-icon">🔒</span>
-          <span>Secure &amp; Private</span>
-        </div>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <!-- ── Navbar ─────────────────────────────────────────────────────────── -->
+    <nav class="navbar">
+      <div class="brand">
+        <img
+          src="/static/images/logo.png"
+          alt="Video Transcriber Logo"
+          class="brand-icon"
+        />
+        <span class="brand-name"
+          >Video<span class="brand-accent">Transcriber</span></span
+        >
       </div>
-    </header>
-
-    <!-- ── Main Card ──────────────────────────────────────────────────────── -->
-    <main class="card">
-      <!-- Tab switcher -->
-      <div class="tabs" role="tablist">
-        <button class="tab active" data-tab="url" role="tab" aria-selected="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          URL
-        </button>
-        <button class="tab" data-tab="file" role="tab" aria-selected="false">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          Upload File
-        </button>
-      </div>
-
-      <!-- URL input -->
-      <div id="panel-url" class="panel active">
-        <div class="input-wrap">
-          <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <input
-            type="url"
-            id="url-input"
-            placeholder="https://www.youtube.com/watch?v=..."
-            autocomplete="off"
-            spellcheck="false"
-          />
-        </div>
-      </div>
-
-      <!-- File upload -->
-      <div id="panel-file" class="panel">
-        <div class="drop-zone" id="drop-zone">
-          <div class="drop-icon-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-          </div>
-          <p>Drop a video file here or <span class="browse-link" id="browse-trigger">browse</span></p>
-          <p class="drop-hint">MP4 &nbsp;·&nbsp; MOV &nbsp;·&nbsp; AVI &nbsp;·&nbsp; MKV &nbsp;·&nbsp; WEBM</p>
-          <input type="file" id="file-input" accept="video/*" hidden />
-        </div>
-        <p class="file-name" id="file-name"></p>
-      </div>
-
-      <!-- Model selector -->
-      <div class="options-row">
-        <label for="model-select">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
-          Whisper model
-        </label>
-        <select id="model-select">
-          <option value="tiny">Tiny — fastest, less accurate</option>
-          <option value="base" selected>Base — balanced (default)</option>
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large — most accurate, slowest</option>
-        </select>
-      </div>
-
-      <button class="btn-primary" id="submit-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-        Get Transcript
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        title="Toggle dark / light mode"
+        aria-label="Toggle theme"
+      >
+        <!-- Moon (dark mode icon) -->
+        <svg
+          class="icon-moon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+        <!-- Sun (light mode icon) -->
+        <svg
+          class="icon-sun"
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
       </button>
+    </nav>
 
-      <!-- Loading -->
-      <div class="status hidden" id="loading">
-        <span class="spinner"></span>
-        <span id="loading-msg">Processing… this may take a few minutes.</span>
-      </div>
+    <div class="page">
+      <!-- ── Hero ───────────────────────────────────────────────────────────── -->
+      <header class="hero">
+        <img
+          src="/static/images/app_logo_image.png"
+          alt="Video Transcriber"
+          class="hero-logo"
+        />
+        <h1>Transcribe Videos<br />into Accurate Text</h1>
+        <p>
+          Fast, accurate, and effortless transcriptions for<br
+            class="br-hide"
+          />lectures, interviews, meetings, and more.
+        </p>
 
-      <!-- Error -->
-      <div class="status error hidden" id="error-box">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span id="error-msg"></span>
-      </div>
+        <div class="features-row">
+          <div class="feature-chip">
+            <span class="chip-icon">⚡</span>
+            <span>Fast &amp; Accurate</span>
+          </div>
+          <div class="feature-chip">
+            <span class="chip-icon">🎞️</span>
+            <span>Multiple Formats</span>
+          </div>
+          <div class="feature-chip">
+            <span class="chip-icon">🔒</span>
+            <span>Secure &amp; Private</span>
+          </div>
+        </div>
+      </header>
 
-      <!-- Result -->
-      <div class="result hidden" id="result-box">
-        <div class="result-header">
-          <h2>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            Transcript
-          </h2>
-          <button class="btn-copy" id="copy-btn" title="Copy to clipboard">
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            Copy
+      <!-- ── Main Card ──────────────────────────────────────────────────────── -->
+      <main class="card">
+        <!-- Tab switcher -->
+        <div class="tabs" role="tablist">
+          <button
+            class="tab active"
+            data-tab="url"
+            role="tab"
+            aria-selected="true"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+              />
+              <path
+                d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+              />
+            </svg>
+            URL
+          </button>
+          <button class="tab" data-tab="file" role="tab" aria-selected="false">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="17 8 12 3 7 8" />
+              <line x1="12" y1="3" x2="12" y2="15" />
+            </svg>
+            Upload File
           </button>
         </div>
-        <textarea id="result-text" readonly spellcheck="false"></textarea>
-        <button class="btn-download" id="download-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download .txt
+
+        <!-- URL input -->
+        <div id="panel-url" class="panel active">
+          <div class="input-wrap">
+            <svg
+              class="input-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              />
+            </svg>
+            <input
+              type="url"
+              id="url-input"
+              placeholder="https://www.youtube.com/watch?v=..."
+              autocomplete="off"
+              spellcheck="false"
+            />
+          </div>
+        </div>
+
+        <!-- File upload -->
+        <div id="panel-file" class="panel">
+          <div class="drop-zone" id="drop-zone">
+            <div class="drop-icon-wrap">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="17 8 12 3 7 8" />
+                <line x1="12" y1="3" x2="12" y2="15" />
+              </svg>
+            </div>
+            <p>
+              Drop a video file here or
+              <span class="browse-link" id="browse-trigger">browse</span>
+            </p>
+            <p class="drop-hint">
+              MP4 &nbsp;·&nbsp; MOV &nbsp;·&nbsp; AVI &nbsp;·&nbsp; MKV
+              &nbsp;·&nbsp; WEBM
+            </p>
+            <input type="file" id="file-input" accept="video/*" hidden />
+          </div>
+          <p class="file-name" id="file-name"></p>
+        </div>
+
+        <!-- Model selector -->
+        <div class="options-row">
+          <label for="model-select">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+              <path d="M4.93 4.93a10 10 0 0 0 0 14.14" />
+            </svg>
+            Whisper model
+          </label>
+          <select id="model-select">
+            <option value="tiny">Tiny — fastest, less accurate</option>
+            <option value="base" selected>Base — balanced (default)</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large — most accurate, slowest</option>
+          </select>
+        </div>
+
+        <button class="btn-primary" id="submit-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
+          Get Transcript
         </button>
-      </div>
-    </main>
 
-    <footer>
-      <img src="/static/images/logo.png" alt="" class="footer-logo" />
-      Built with <strong>FastAPI</strong> &amp; <strong>Whisper AI</strong>
-    </footer>
-  </div>
+        <!-- Loading -->
+        <div class="status hidden" id="loading">
+          <span class="spinner"></span>
+          <span id="loading-msg">Processing… this may take a few minutes.</span>
+        </div>
 
-  <script src="/static/app.js"></script>
-</body>
+        <!-- Error -->
+        <div class="status error hidden" id="error-box">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+          <span id="error-msg"></span>
+        </div>
+
+        <!-- Result -->
+        <div class="result hidden" id="result-box">
+          <div class="result-header">
+            <h2>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+              Transcript
+            </h2>
+            <button class="btn-copy" id="copy-btn" title="Copy to clipboard">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="13"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                <path
+                  d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                />
+              </svg>
+              Copy
+            </button>
+          </div>
+          <textarea id="result-text" readonly spellcheck="false"></textarea>
+          <button class="btn-download" id="download-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Download .txt
+          </button>
+        </div>
+      </main>
+
+      <footer>
+        <img src="/static/images/logo.png" alt="" class="footer-logo" />
+        Built with <strong>FastAPI</strong> &amp; <strong>Whisper AI</strong>
+      </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
 </html>
