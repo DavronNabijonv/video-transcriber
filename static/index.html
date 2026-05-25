@@ -12,11 +12,26 @@
     />
     <meta
       name="keywords"
-      content="video to text, video transcriber, YouTube transcription, audio to text, whisper AI, free transcription, subtitle generator, speech to text"
+      content="video to text, video transcriber, YouTube transcription, audio to text, whisper AI, free transcription, subtitle generator, speech to text, video-textscripter, videotextscripter, video text scripter, video scripter, video script extractor, extract text from video, video transcript generator, online video transcription, AI transcription tool, convert video to text online, YouTube to text, MP4 to text, video captioning tool"
     />
     <meta name="author" content="Video Transcriber" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="application-name" content="Video Transcriber — VideoTextScripter" />
+    <meta name="subject" content="Free AI-powered video to text transcription service — video-textscripter" />
+    <meta name="classification" content="Utility, AI Tool, Transcription, Speech to Text" />
+    <meta name="category" content="Video Transcription Tool" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="language" content="en" />
     <link rel="canonical" href="https://video-transcriber-w3it.onrender.com/" />
+
+    <!-- ── Mobile / PWA Hints ────────────────────────────────────────────── -->
+    <meta name="theme-color" content="#6c63ff" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#4f46e5" media="(prefers-color-scheme: light)" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="VideoTextScripter" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- ── Open Graph (Facebook, LinkedIn, Telegram, WhatsApp) ─────────── -->
     <meta property="og:type" content="website" />
@@ -38,11 +53,14 @@
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Video Transcriber — AI-powered video to text tool" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Video Transcriber" />
+    <meta property="og:site_name" content="Video Transcriber — VideoTextScripter" />
 
     <!-- ── Twitter / X Card ─────────────────────────────────────────────── -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@VideoTextScripter" />
+    <meta name="twitter:creator" content="@VideoTextScripter" />
     <meta
       name="twitter:url"
       content="https://video-transcriber-w3it.onrender.com/"
@@ -66,10 +84,21 @@
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Video Transcriber",
+        "alternateName": [
+          "VideoTextScripter",
+          "video-textscripter",
+          "Video Text Scripter",
+          "Video Scripter",
+          "Video Script Extractor"
+        ],
         "url": "https://video-transcriber-w3it.onrender.com/",
-        "description": "Free AI-powered video transcription. Convert YouTube, Instagram or any video URL to text using OpenAI Whisper.",
+        "description": "Free AI-powered video transcription. Convert YouTube, Instagram or any video URL to text using OpenAI Whisper. Also known as video-textscripter — extract accurate text scripts from any video online.",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
+        "keywords": "video-textscripter, videotextscripter, video to text, video transcriber, YouTube transcription, audio to text, whisper AI, free transcription, subtitle generator, speech to text, extract text from video",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -77,13 +106,169 @@
         },
         "featureList": [
           "YouTube video transcription",
-          "Video file upload (MP4, MOV, AVI, MKV)",
-          "Multiple Whisper model sizes",
+          "Instagram video transcription",
+          "Video file upload (MP4, MOV, AVI, MKV, WEBM)",
+          "Multiple Whisper model sizes (tiny to large)",
           "Download transcript as .txt",
-          "No sign-up required"
+          "No sign-up required",
+          "Dark and light mode"
+        ],
+        "sameAs": [
+          "https://video-transcriber-w3it.onrender.com/"
         ]
       }
     </script>
+    <!-- ── AI Search: FAQPage Schema (Google AI Overviews, Bing Copilot, Perplexity, ChatGPT Search) ── -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is VideoTextScripter (video-textscripter)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VideoTextScripter (also written as video-textscripter) is a free AI-powered online tool that converts any video into accurate text. Paste a YouTube, Instagram, or any video URL — or upload an MP4, MOV, AVI, MKV, or WEBM file — and get a full transcript in seconds using OpenAI Whisper AI. No sign-up or account required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I convert a YouTube video to text for free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To convert a YouTube video to text for free: 1) Go to video-transcriber-w3it.onrender.com, 2) Paste the YouTube video URL into the input field, 3) Select a Whisper AI model (Base is recommended for most videos), 4) Click 'Get Transcript'. Your text transcript will appear in seconds and can be copied or downloaded as a .txt file."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What video formats does VideoTextScripter support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VideoTextScripter supports MP4, MOV, AVI, MKV, and WEBM video file uploads. It also accepts direct video URLs from YouTube, Instagram, and other video platforms. There is no need to convert your video before uploading."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is VideoTextScripter completely free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, VideoTextScripter is 100% free to use. There are no subscriptions, no hidden fees, and no account or sign-up required. Simply open the website, paste your video URL or upload a file, and get your transcript instantly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How accurate is the video transcription?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VideoTextScripter uses OpenAI Whisper AI, one of the most accurate open-source speech recognition models available. Accuracy depends on audio quality and the chosen model size — the 'Large' model delivers the highest accuracy (95%+ for clear audio), while 'Tiny' is fastest but less precise. For lectures, interviews, and meetings with clear speech, accuracy is typically excellent."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which AI model powers the transcription?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VideoTextScripter is powered by OpenAI Whisper — an open-source automatic speech recognition (ASR) model. You can choose from five model sizes: Tiny (fastest), Base (balanced, default), Small, Medium, and Large (most accurate). Larger models take more time but produce significantly better results."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to create an account to use VideoTextScripter?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No account or sign-up is needed. VideoTextScripter is completely open — just open the website and start transcribing any video instantly. Your transcripts are never stored on the server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the best free alternative to Otter.ai or Descript for video transcription?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "VideoTextScripter (video-textscripter) is a top free alternative to Otter.ai, Descript, Rev, and Sonix. Unlike those paid tools, VideoTextScripter is completely free, requires no sign-up, and supports both URL-based and file-upload transcription using OpenAI Whisper AI directly in your browser."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- ── AI Search: HowTo Schema ───────────────────────────────────────── -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Transcribe a Video to Text Using VideoTextScripter",
+        "description": "Convert any YouTube or video URL to text in seconds using VideoTextScripter — a free AI transcription tool powered by OpenAI Whisper.",
+        "totalTime": "PT1M",
+        "estimatedCost": {
+          "@type": "MonetaryAmount",
+          "currency": "USD",
+          "value": "0"
+        },
+        "tool": [
+          {
+            "@type": "HowToTool",
+            "name": "VideoTextScripter (video-textscripter)",
+            "url": "https://video-transcriber-w3it.onrender.com/"
+          }
+        ],
+        "step": [
+          {
+            "@type": "HowToStep",
+            "position": 1,
+            "name": "Open VideoTextScripter",
+            "text": "Go to video-transcriber-w3it.onrender.com. No sign-up or account is required. The tool works in any modern browser.",
+            "url": "https://video-transcriber-w3it.onrender.com/"
+          },
+          {
+            "@type": "HowToStep",
+            "position": 2,
+            "name": "Paste your video URL or upload a file",
+            "text": "In the URL tab, paste a YouTube, Instagram, or any video link. Or switch to the Upload tab and drag-and-drop an MP4, MOV, AVI, MKV, or WEBM file."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 3,
+            "name": "Choose a Whisper AI model",
+            "text": "Select a transcription model from the dropdown. 'Base' is the default and works well for most videos. For maximum accuracy choose 'Large'; for the fastest result choose 'Tiny'."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 4,
+            "name": "Click Get Transcript",
+            "text": "Press the 'Get Transcript' button. The AI will process your video and display the full text transcript on screen within seconds to a few minutes depending on video length."
+          },
+          {
+            "@type": "HowToStep",
+            "position": 5,
+            "name": "Copy or download your transcript",
+            "text": "Once the transcript appears, use the Copy button to copy it to your clipboard, or click 'Download .txt' to save it as a text file to your device."
+          }
+        ]
+      }
+    </script>
+
+    <!-- ── AI Search: WebSite + Sitelinks Search Box ─────────────────────── -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "VideoTextScripter — Video Transcriber",
+        "alternateName": "video-textscripter",
+        "url": "https://video-transcriber-w3it.onrender.com/",
+        "description": "Free AI-powered video to text transcription. Convert YouTube and video URLs to text instantly using OpenAI Whisper. Known as VideoTextScripter or video-textscripter.",
+        "inLanguage": "en",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://video-transcriber-w3it.onrender.com/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -99,7 +284,7 @@
       gtag("config", "G-RW0DCRHC05");
     </script>
 
-    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- ── Navbar ─────────────────────────────────────────────────────────── -->
@@ -445,12 +630,170 @@
         </div>
       </main>
 
+      <!-- ── How It Works ─────────────────────────────────────────────────── -->
+      <section class="how-section" aria-label="How to use VideoTextScripter">
+        <h2 class="section-heading">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          How It Works
+        </h2>
+        <ol class="steps-list">
+          <li>
+            <div class="step-num" aria-hidden="true">1</div>
+            <div class="step-content">
+              <strong>Paste a URL or upload a file</strong>
+              <span>Supports YouTube, Instagram and most video platforms. Or drag-and-drop an MP4, MOV, AVI, MKV, or WEBM file.</span>
+            </div>
+          </li>
+          <li>
+            <div class="step-num" aria-hidden="true">2</div>
+            <div class="step-content">
+              <strong>Choose a Whisper AI model</strong>
+              <span>Pick <em>Base</em> for a fast balanced result, or <em>Large</em> for maximum accuracy on complex audio.</span>
+            </div>
+          </li>
+          <li>
+            <div class="step-num" aria-hidden="true">3</div>
+            <div class="step-content">
+              <strong>Click "Get Transcript"</strong>
+              <span>OpenAI Whisper processes the audio and returns a full text transcript — typically in seconds.</span>
+            </div>
+          </li>
+          <li>
+            <div class="step-num" aria-hidden="true">4</div>
+            <div class="step-content">
+              <strong>Copy or download your text</strong>
+              <span>Copy the transcript to your clipboard or save it as a <code>.txt</code> file with one click.</span>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ── FAQ ───────────────────────────────────────────────────────────── -->
+      <section class="faq-section" aria-label="Frequently asked questions about VideoTextScripter">
+        <h2 class="section-heading">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          Frequently Asked Questions
+        </h2>
+        <dl class="faq-list">
+
+          <details>
+            <summary>
+              What is VideoTextScripter (video-textscripter)?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <dd class="faq-answer">
+              <strong>VideoTextScripter</strong> (also written as <strong>video-textscripter</strong>) is a free AI-powered online tool that converts any video into accurate text. Paste a YouTube, Instagram, or any video URL — or upload an MP4, MOV, AVI, MKV, or WEBM file — and get a full transcript in seconds using <strong>OpenAI Whisper AI</strong>. No sign-up or account required.
+            </dd>
+          </details>
+
+          <details>
+            <summary>
+              How do I convert a YouTube video to text for free?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <dd class="faq-answer">
+              Paste the YouTube link into the URL field on this page, select a Whisper model, then click <strong>Get Transcript</strong>. The full text appears in seconds — no sign-up, no fees, no software to install.
+            </dd>
+          </details>
+
+          <details>
+            <summary>
+              What video formats are supported?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <dd class="faq-answer">
+              VideoTextScripter supports file uploads in <strong>MP4, MOV, AVI, MKV, and WEBM</strong> formats. It also accepts direct URLs from YouTube, Instagram, and most other video-hosting platforms.
+            </dd>
+          </details>
+
+          <details>
+            <summary>
+              Is VideoTextScripter completely free?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <dd class="faq-answer">
+              Yes — 100% free. No subscriptions, no hidden costs, and no account needed. Open the site and start transcribing immediately.
+            </dd>
+          </details>
+
+          <details>
+            <summary>
+              How accurate is the transcription?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <dd class="faq-answer">
+              Powered by <strong>OpenAI Whisper</strong>, accuracy is excellent for clear speech — typically 95%+ for lectures, interviews, and meetings. Use the <em>Large</em> model for maximum precision on complex or accented audio, or <em>Base</em> for the best speed-accuracy balance.
+            </dd>
+          </details>
+
+          <details>
+            <summary>
+              Which AI model is used for transcription?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <dd class="faq-answer">
+              VideoTextScripter uses <strong>OpenAI Whisper</strong> — a state-of-the-art open-source speech recognition model. Five sizes are available: <strong>Tiny</strong> (fastest), <strong>Base</strong> (default), <strong>Small</strong>, <strong>Medium</strong>, and <strong>Large</strong> (most accurate).
+            </dd>
+          </details>
+
+          <details>
+            <summary>
+              Is it a good free alternative to Otter.ai or Descript?
+              <svg class="faq-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </summary>
+            <dd class="faq-answer">
+              Yes. <strong>VideoTextScripter</strong> is a top free alternative to Otter.ai, Descript, Rev, and Sonix. Unlike those paid tools, it's completely free, requires no sign-up, and supports both URL-based and file-upload transcription using OpenAI Whisper directly in your browser.
+            </dd>
+          </details>
+
+        </dl>
+      </section>
+
       <footer>
         <img src="/static/images/logo.png" alt="" class="footer-logo" />
         Built with <strong>FastAPI</strong> &amp; <strong>Whisper AI</strong>
       </footer>
     </div>
 
-    <script src="/static/app.js"></script>
+    <script src="./app.js"></script>
   </body>
 </html>
