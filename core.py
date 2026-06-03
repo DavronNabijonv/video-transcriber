@@ -5,6 +5,8 @@ Shared transcription logic — used by FastAPI (main.py) and the desktop app.
 import os
 from pathlib import Path
 
+_whisper_cache: dict = {}
+
 
 def download_url(url: str, tmp_dir: str) -> str:
     """Download best-quality audio from a public video URL via yt-dlp."""
@@ -75,6 +77,8 @@ def transcribe(audio_path: str, model_size: str = "base") -> str:
     except ImportError:
         raise RuntimeError("openai-whisper not installed. Run: pip install openai-whisper")
 
-    model = whisper.load_model(model_size)
-    result = model.transcribe(audio_path, language=None, verbose=False)
+    if model_size not in _whisper_cache:
+        _whisper_cache[model_size] = whisper.load_model(model_size)
+
+    result = _whisper_cache[model_size].transcribe(audio_path, language=None, verbose=False)
     return result["text"].strip()

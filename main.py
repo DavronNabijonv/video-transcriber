@@ -14,25 +14,42 @@ GET /download/{file_id}  →  transcript.txt file download
 GET /                    →  web UI
 """
 
+import asyncio
 import os
-import uuid
 import tempfile
+import time
+import uuid
 from pathlib import Path
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 
 from core import download_url, extract_audio, transcribe
 
 app = FastAPI(title="Video Transcriber API", version="1.0.0")
 
-TRANSCRIPTS_DIR = Path("transcripts")
-TRANSCRIPTS_DIR.mkdir(exist_ok=True)
-
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 ALLOWED_MODELS = {"tiny", "base", "small", "medium", "large"}
+
+# In-memory transcript store: file_id -> (text, created_at_timestamp)
+_transcripts: dict[str, tuple[str, float]] = {}
+TRANSCRIPT_TTL = 3600  # seconds — entries expire after 1 hour
+
+
+@app.on_event("startup")
+async def _start_cleanup_task():
+    asyncio.create_task(_cleanup_loop())
+
+
+async def _cleanup_loop():
+    while True:
+        await asyncio.sleep(300)  # run every 5 minutes
+        cutoff = time.time() - TRANSCRIPT_TTL
+        expired = [k for k, (_, ts) in _transcripts.items() if ts < cutoff]
+        for k in expired:
+            _transcripts.pop(k, None)
 
 
 @app.get("/")
@@ -75,7 +92,7 @@ async def transcribe_endpoint(
             raise HTTPException(500, f"Unexpected error: {exc}")
 
     file_id = str(uuid.uuid4())
-    (TRANSCRIPTS_DIR / f"{file_id}.txt").write_text(text, encoding="utf-8")
+    _transcripts[file_id] = (text, time.time())
 
     return {"text": text, "download_url": f"/download/{file_id}"}
 
@@ -85,8 +102,13 @@ async def download_transcript(file_id: str):
     if not file_id.replace("-", "").isalnum():
         raise HTTPException(400, "Invalid file ID.")
 
-    txt_path = TRANSCRIPTS_DIR / f"{file_id}.txt"
-    if not txt_path.exists():
+    entry = _transcripts.get(file_id)
+    if entry is None:
         raise HTTPException(404, "Transcript not found or expired.")
 
-    return FileResponse(str(txt_path), media_type="text/plain", filename="transcript.txt")
+    text, _ = entry
+    return Response(
+        content=text.encode("utf-8"),
+        media_type="text/plain",
+        headers={"Content-Disposition": 'attachment; filename="transcript.txt"'},
+    )
