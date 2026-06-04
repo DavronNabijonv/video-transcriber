@@ -1,0 +1,5 @@
+# All server deps
+-r requirements.txt
+
+# Desktop UI only (not needed on render.com)
+customtkinter

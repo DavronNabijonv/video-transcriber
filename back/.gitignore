@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environment
+venv/
+.venv/
+env/
+.env
+
+# Environment variables
+.env.*
+*.env
+
+# Logs & temp
+*.log
+*.tmp
+*.temp
+
+# Transcripts generated at runtime
+transcripts/
+
+# Uploaded files (temp processing)
+uploads/
+
+# Audio / video artifacts
+*.mp3
+*.mp4
+*.wav
+*.mov
+*.avi
+*.webm
+*.m4a
+
+# Whisper model cache
+~/.cache/whisper/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
