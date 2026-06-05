@@ -32,7 +32,7 @@ app = FastAPI(title="Video Transcriber API", version="1.0.0")
 # e.g. allow_origins=["https://your-frontend.vercel.app"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://video-transcriber-front.vercel.app"],
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
