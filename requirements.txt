@@ -1,9 +1,0 @@
-# Core transcription
-yt-dlp
-openai-whisper
-ffmpeg-python
-
-# FastAPI
-fastapi
-uvicorn[standard]
-python-multipart
