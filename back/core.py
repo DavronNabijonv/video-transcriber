@@ -2,10 +2,13 @@
 Shared transcription logic — used by FastAPI (main.py) and the desktop app.
 """
 
+import gc
 import os
 from pathlib import Path
 
-_whisper_cache: dict = {}
+# Single-slot cache: keeps only the last loaded model to cap RAM usage.
+_cached_model_size: str | None = None
+_cached_model = None
 
 
 def download_url(url: str, tmp_dir: str) -> str:
@@ -72,13 +75,19 @@ def extract_audio(video_path: str, tmp_dir: str) -> str:
 
 def transcribe(audio_path: str, model_size: str = "base") -> str:
     """Transcribe an audio file with OpenAI Whisper. Auto-detects language."""
+    global _cached_model_size, _cached_model
+
     try:
         import whisper
     except ImportError:
         raise RuntimeError("openai-whisper not installed. Run: pip install openai-whisper")
 
-    if model_size not in _whisper_cache:
-        _whisper_cache[model_size] = whisper.load_model(model_size)
+    if _cached_model_size != model_size:
+        # Free the old model before loading a new one to avoid double RAM usage.
+        _cached_model = None
+        gc.collect()
+        _cached_model = whisper.load_model(model_size)
+        _cached_model_size = model_size
 
-    result = _whisper_cache[model_size].transcribe(audio_path, language=None, verbose=False)
+    result = _cached_model.transcribe(audio_path, language=None, verbose=False)
     return result["text"].strip()

@@ -82,7 +82,8 @@ async def transcribe_endpoint(
                 ext = Path(file.filename).suffix or ".mp4"
                 video_path = os.path.join(tmp_dir, f"input{ext}")
                 with open(video_path, "wb") as f:
-                    f.write(await file.read())
+                    while chunk := await file.read(1024 * 1024):  # 1 MB chunks
+                        f.write(chunk)
                 audio_path = extract_audio(video_path, tmp_dir)
 
             text = transcribe(audio_path, model_size=model)
