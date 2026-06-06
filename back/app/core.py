@@ -1,5 +1,5 @@
 """
-Shared transcription logic — used by FastAPI (main.py) and the desktop app.
+Shared transcription logic — used by FastAPI (app/main.py) and the desktop app.
 """
 
 import gc

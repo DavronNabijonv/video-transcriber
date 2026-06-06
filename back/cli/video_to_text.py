@@ -2,9 +2,9 @@
 Instagram Video → Text Transcriber
 ===================================
 Ishlatish:
-  python video_to_text.py --url "https://www.instagram.com/reel/..."
-  python video_to_text.py --file "video.mp4"
-  python video_to_text.py --url "..." --output both
+  python cli/video_to_text.py --url "https://www.instagram.com/reel/..."
+  python cli/video_to_text.py --file "video.mp4"
+  python cli/video_to_text.py --url "..." --output both
 """
 
 import argparse
@@ -31,7 +31,7 @@ def check_dependencies():
         missing.append("ffmpeg-python")
 
     if missing:
-        print("❌ Quyidagi kutubxonalar o'rnatilmagan:")
+        print("Quyidagi kutubxonalar o'rnatilmagan:")
         for pkg in missing:
             print(f"   pip install {pkg}")
         print("\nBarini birdan o'rnatish:")
@@ -43,7 +43,7 @@ def download_instagram_video(url: str, output_dir: str) -> str:
     """Instagram URL dan video yuklab oladi, audio sifatida saqlaydi."""
     import yt_dlp
 
-    print(f"⬇️  Instagram'dan yuklab olinmoqda: {url}")
+    print(f"Instagram'dan yuklab olinmoqda: {url}")
 
     audio_path = os.path.join(output_dir, "audio.mp3")
 
@@ -65,13 +65,12 @@ def download_instagram_video(url: str, output_dir: str) -> str:
         ydl.download([url])
 
     if not os.path.exists(audio_path):
-        # Ba'zan extension farq qilishi mumkin
         for f in os.listdir(output_dir):
             if f.startswith("audio"):
                 audio_path = os.path.join(output_dir, f)
                 break
 
-    print(f"✅ Audio saqlandi: {audio_path}")
+    print(f"Audio saqlandi: {audio_path}")
     return audio_path
 
 
@@ -79,7 +78,7 @@ def extract_audio_from_file(video_path: str, output_dir: str) -> str:
     """Lokal video fayldan audio ajratib oladi."""
     import ffmpeg
 
-    print(f"🎵 Audiodan ajratilmoqda: {video_path}")
+    print(f"Audiodan ajratilmoqda: {video_path}")
 
     audio_path = os.path.join(output_dir, "audio.mp3")
 
@@ -92,10 +91,10 @@ def extract_audio_from_file(video_path: str, output_dir: str) -> str:
             .run(quiet=True)
         )
     except ffmpeg.Error as e:
-        print(f"❌ FFmpeg xatosi: {e.stderr.decode()}")
+        print(f"FFmpeg xatosi: {e.stderr.decode()}")
         sys.exit(1)
 
-    print(f"✅ Audio ajratildi: {audio_path}")
+    print(f"Audio ajratildi: {audio_path}")
     return audio_path
 
 
@@ -103,16 +102,16 @@ def transcribe_audio(audio_path: str, model_size: str = "base") -> str:
     """Whisper AI yordamida audiodan matn ajratadi."""
     import whisper
 
-    print(f"🤖 Whisper modeli yuklanmoqda ({model_size})...")
+    print(f"Whisper modeli yuklanmoqda ({model_size})...")
     print("   (Birinchi marta uzoq vaqt olishi mumkin)")
 
     model = whisper.load_model(model_size)
 
-    print("📝 Matn ajratilmoqda...")
+    print("Matn ajratilmoqda...")
     result = model.transcribe(audio_path, language="en", verbose=False)
 
     text = result["text"].strip()
-    print(f"✅ Matn ajratildi! ({len(text)} belgi)")
+    print(f"Matn ajratildi! ({len(text)} belgi)")
     return text
 
 
@@ -121,7 +120,7 @@ def save_results(text: str, output_mode: str, base_name: str):
 
     if output_mode in ("screen", "both"):
         print("\n" + "=" * 60)
-        print("📄 MATN NATIJASI:")
+        print("MATN NATIJASI:")
         print("=" * 60)
         print(text)
         print("=" * 60)
@@ -130,7 +129,7 @@ def save_results(text: str, output_mode: str, base_name: str):
         txt_path = f"{base_name}_transcript.txt"
         with open(txt_path, "w", encoding="utf-8") as f:
             f.write(text)
-        print(f"\n💾 Fayl saqlandi: {txt_path}")
+        print(f"\nFayl saqlandi: {txt_path}")
 
 
 def main():
@@ -157,29 +156,24 @@ def main():
 
     args = parser.parse_args()
 
-    # Kutubxonalarni tekshirish
     check_dependencies()
 
     with tempfile.TemporaryDirectory() as tmp_dir:
 
-        # 1. Audio olish
         if args.url:
             audio_path = download_instagram_video(args.url, tmp_dir)
             base_name = "instagram_video"
         else:
             if not os.path.exists(args.file):
-                print(f"❌ Fayl topilmadi: {args.file}")
+                print(f"Fayl topilmadi: {args.file}")
                 sys.exit(1)
             audio_path = extract_audio_from_file(args.file, tmp_dir)
             base_name = Path(args.file).stem
 
-        # 2. Matn ajratish
         text = transcribe_audio(audio_path, model_size=args.model)
-
-        # 3. Natijani saqlash
         save_results(text, args.output, base_name)
 
-    print("\n✅ Tayyor!")
+    print("\nTayyor!")
 
 
 if __name__ == "__main__":

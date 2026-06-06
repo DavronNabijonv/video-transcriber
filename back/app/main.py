@@ -24,12 +24,10 @@ from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 
-from core import download_url, extract_audio, transcribe
+from .core import download_url, extract_audio, transcribe
 
 app = FastAPI(title="Video Transcriber API", version="1.0.0")
 
-# Allow all origins for now; restrict to your frontend URL once deployed.
-# e.g. allow_origins=["https://your-frontend.vercel.app"]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://video-transcriber-front.vercel.app"],

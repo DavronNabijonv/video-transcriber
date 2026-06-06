@@ -1,20 +1,24 @@
 """
 Video Transcriber — Desktop App (CustomTkinter)
 ================================================
-Run:  python desktop_app.py
-Requires: pip install -r requirements-desktop.txt
+Run from project root:  python -m desktop.desktop_app
+Requires: pip install -r requirements/desktop.txt
 
-The desktop app calls core.py directly — no server needed.
+The desktop app calls app/core.py directly — no server needed.
 """
 
+import sys
 import tempfile
 import threading
 from pathlib import Path
 from tkinter import filedialog
 
+# Allow running from project root or from this directory
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 import customtkinter as ctk
 
-from core import download_url, extract_audio, transcribe
+from app.core import download_url, extract_audio, transcribe
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")

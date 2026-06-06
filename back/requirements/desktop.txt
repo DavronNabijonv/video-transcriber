@@ -1,0 +1,5 @@
+# All server deps
+-r server.txt
+
+# Desktop UI only (not needed on server)
+customtkinter
